@@ -282,6 +282,7 @@ RequestBase.prototype.then = function (resolve, reject) {
         error.url = this.url;
         reject(error);
       });
+      // await 调用之后注册一个回调函数
       self.end((error, res) => {
         if (error) reject(error);
         else resolve(res);

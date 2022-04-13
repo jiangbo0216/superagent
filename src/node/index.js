@@ -148,7 +148,7 @@ function _initHeaders(request_) {
  * @param {String|Object} url
  * @api public
  */
-
+//# Request 方法
 function Request(method, url) {
   Stream.call(this);
   if (typeof url !== 'string') url = format(url);
@@ -421,6 +421,7 @@ Request.prototype.pipe = function (stream, options) {
 };
 
 Request.prototype._pipeContinue = function (stream, options) {
+  //# 监听 response 事件
   this.req.once('response', (res) => {
     // redirect
     if (
@@ -660,6 +661,7 @@ Request.prototype.disableTLSCerts = function () {
  */
 
 // eslint-disable-next-line complexity
+//# 发起请求, socket 通信
 Request.prototype.request = function () {
   if (this.req) return this.req;
 

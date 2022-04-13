@@ -724,7 +724,7 @@ Request.prototype._isHost = function (object) {
  * @return {Request} for chaining
  * @api public
  */
-
+//# 使用注册的回调函数, callback 会在 'end' 事件触发之后调用
 Request.prototype.end = function (fn) {
   if (this._endCalled) {
     console.warn(
